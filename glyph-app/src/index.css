@@ -1,0 +1,75 @@
+:root {
+  --gold: #FFB800;
+  --gold-light: #FFD555;
+  --amber: #E07B00;
+  --bg: #12100E;
+  --bg-card: #1E1A16;
+  --bg-input: #17140F;
+  --border: rgba(255,184,0,0.22);
+  --text-primary: #FFF8EC;
+  --text-second: #C8B48A;
+  --text-muted: #7A6A4F;
+  --teal: #00D4A8;
+  --teal-dim: rgba(0,212,168,0.15);
+  --red: #FF5A36;
+  --blue: #4A9EFF;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+textarea, input {
+  font-family: 'Outfit', sans-serif;
+  -webkit-appearance: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(255,184,0,0.3); border-radius: 2px; }
+
+/* Animations */
+@keyframes iconPulse {
+  0%,100% { box-shadow: 0 0 32px rgba(255,184,0,0.45), 0 6px 20px rgba(0,0,0,0.4); }
+  50% { box-shadow: 0 0 60px rgba(255,184,0,0.75), 0 6px 24px rgba(0,0,0,0.5); }
+}
+@keyframes livePulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(1.5); }
+}
+@keyframes spinY { to { transform: rotateY(360deg); } }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
